@@ -1,0 +1,87 @@
+Welcome to the dynamic world of coding, where every keystroke counts!  If you love to customize 
+your coding environment, and/or are looking to increase your coding efficiency, then neovim is for you!
+Neovim is a lightweight, powerful and highly customizable text editor where no mouse is required!
+
+By default, neovim doesn't look or feel very impressive, but by then end of these tutorials you should
+know how to configure it to your liking and have a configuration ready to deploy and use.
+
+## HISTORY
+
+You may have never of heard of neovim, but it has been around for over 10 years and is still used in 
+some of the most popular projects. In 2014, Neovim emerged as a collaborative open source effort to 
+revitalize the legendary Vim editor, prioritizing extensibility and developer-friendly enhancements. 
+Led by a global community, Neovim evolved with features like a built-in terminal and improved plugin 
+architecture. Its impact on the coding scene extended beyond its standalone success, influencing other
+editors like Visual Studio Code (VS Code). Neovim's concepts, such as the Language Server Protocol, 
+influenced VS Code's design, contributing to the latter's rise in popularity. The history of Neovim 
+is not just a narrative of an editor's evolution but a pivotal chapter in shaping the landscape of 
+modern coding tools.
+
+## CONFIGURATION OVERVIEW
+
+Through this series of tasks you will build your own neovim configuration.  Configuration of most things
+in Linux are provided through a configuration file.  Often times there are even a series of configuration
+files that will over ride each other.  For example, you are likely currently logged in to a server via
+a service called "ssh".  The main configuration file for ssh lives in "/etc/ssh/sshd_config", but a user
+may also make a config file in "~/.ssh/config" that will override the sshd_config settings.  The purpose
+is so that good defaults for an application or service can be provided and the user can override those
+defaults without making change to the original configuration.
+
+The config file for neovim is located at "~/.config/nvim/init.lua".  When you log into the server if you run:
+
+        $ pwd
+    
+    It should return:
+        /home/(your username)/  -->  ex.  "/home/dbaugh"
+
+This is called your home directory and you can return to it anytime by using the command:
+
+        $ cd ~/
+
+This means the config file live in your the .config directory for your user, it should only effect 
+neovim for you.  Anyone else will have the default configuration for neovim, unless they have created 
+an "init.lua" file in their home directory(/home/.config/nvim/init.lua).
+
+## FIRST STEPS
+
+    1.  Install neovim - this has been done for you.
+            If you are using the school server, you can skip this step.
+            If you are doing this on your own computer, you will need to first install neovim.
+            For most installations you can use the build in package manager, but ensure you have
+            a minimum of version 0.8.0 or higher installed for all plugins to function properly.
+
+            To determine neovim version run:
+                $ nvim --version
+
+    2.  Check to see which version of neovim is installed, see end of last step
+
+    3.  Check to see if neovim already has a configuration.
+            $ ls ~/.config/nvim/
+
+        a.  If items are listed out on the command line, back up or remove your existing configuration.
+                backup --> $ mv -r ~/.config/nvim/ ~/.config/nvim.old
+                remove --> $ rm -rf ~/.config/nvim
+    4.  Create a new config directory
+            $ mkdir ~/.config/nvim
+
+    5.  Create a new init.lua file
+            $ touch ~/.config/nvim/init.lua
+
+    6.  Open your configuration file in neovim and start configuring!
+            $ nvim ~/.config/nvim/init.lua
+
+    7.  Once you are in, press the "i" key to enter insert mode and type the following:
+
+            echo "Welcome to neovim!"
+
+    8.  Save your changes and exit
+            Press the "Esc" key to exit insert mode and return to normal mode
+            type ":wq" to save and exit
+
+    9.  Check your progress opening neovim, if you are successful you should see your welcome message
+
+## TO SUBMIT
+
+    1.  Go to Google Classroom, fill in and submit the Introduction WS that goes along with this tutorial
+    2.  Make sure you have a working config and when you open neovim you see your welcome message 
+        before you move onto the next lesson.

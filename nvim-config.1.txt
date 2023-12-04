@@ -1,0 +1,78 @@
+Configuration in neovim can be very modular.  To start with, we will have a single file config, called 
+"init.lua".  Later on we will change our configuration to be more modular.  Either way will function fine, but 
+keeping it modular makes it more organized and easier to work with later on.  Neovim can be configured using 
+either vimscript or lua, we will be using lua to write our config.
+
+## WHAT IS LUA?
+
+Lua is a lightweight, high-level scripting language known for its simplicity.  It is a general purpose 
+programming language that can be used for a wide variety of applications.  Lua is used in many different
+has become a popular scripting language and is used in many other applications as well.  With lua and neovim
+we will be able to control everything from key-mappings, appearance, and even modern language tools and features.
+
+## GETTING STARTED
+
+Open up your init.lua file that you created in the previous step(nvim ~/.config/nvim/init.lua).
+
+Start by adding the follwing lines to your configuration file:
+
+---
+
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.wrap = false
+vim.o.showmode = false
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
+
+vim.o.clipboard = "unnamedplus"
+
+---
+
+The above lines set some basics for neovim.  Below is a more comprehensive list of options you can set, 
+it also includes some explanation of each of the options above.
+
+Start by copying the aboves lines in your configuration and then save and quit.  Re-open neovim and make
+sure everything was set without any errors.  If everything worked, feel free to play and experiment with
+with some of the other options below or look up "basic neovim settings" on the internet.
+
+## BASIC NEOVIM SETTINGS
+
+-- Basic Settings
+vim.cmd[[syntax enable]]                -- Enable syntax highlighting
+vim.cmd[[filetype plugin indent on]]    -- Enable file type detection, plugins, and indentation
+
+-- Appearance
+vim.o.number = true                     -- Display line numbers
+vim.o.relativenumber = true             -- Show relative line numbers
+vim.o.wrap = false                      -- Disable line wrapping
+vim.o.showmode = false                  -- Hide the mode indicator
+
+-- Indentation and Formatting
+vim.o.tabstop = 4                       -- Number of spaces a tab counts for
+vim.o.shiftwidth = 4                    -- Number of spaces to use for each step of autoindent
+vim.o.expandtab = true                   -- Use spaces instead of tabs
+vim.o.smartindent = true                 -- Enable smart indenting
+
+-- Search and Highlight
+vim.o.incsearch = true                  -- Enable incremental search
+vim.o.hlsearch = true                   -- Highlight search results
+vim.o.ignorecase = true                 -- Case-insensitive search
+vim.o.smartcase = true                  -- Case-sensitive if search pattern has uppercase characters
+
+-- Mouse and Clipboard
+vim.o.mouse = "a"                       -- Enable mouse support
+vim.o.clipboard = "unnamedplus"         -- Use system clipboard
+
+-- Backup and Swap Files
+vim.o.backup = false                    -- Disable backup files
+vim.o.swapfile = false                  -- Disable swap files
+
+-- Miscellaneous
+vim.o.hidden = true                     -- Allow hidden buffers
+vim.o.showcmd = true                    -- Show partial command in status line
+vim.o.laststatus = 2                    -- Always show status line
+vim.o.scrolloff = 8                     -- Minimal number of screen lines to keep above and below the cursor
